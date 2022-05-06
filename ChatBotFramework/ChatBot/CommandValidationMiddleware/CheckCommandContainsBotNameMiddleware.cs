@@ -2,11 +2,11 @@
 
 namespace ChatBot.CommandValidationMiddleware
 {
-    internal class IsCommandContainsBotNameMiddleware : CommandValidationMiddlewareBase
+    internal class CheckCommandContainsBotNameMiddleware : CommandValidationMiddlewareBase
     {
         private BotNameValidator _botNameValidator;
 
-        public IsCommandContainsBotNameMiddleware(ICommandExecutor executor, BotNameValidator botNameValidator) 
+        public CheckCommandContainsBotNameMiddleware(ICommandExecutor executor, BotNameValidator botNameValidator) 
             : base(executor) 
         {
             _botNameValidator = botNameValidator;

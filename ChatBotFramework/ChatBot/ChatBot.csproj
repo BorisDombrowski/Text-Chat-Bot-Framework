@@ -12,10 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="TelegramApiProvider\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Telegram.Bot" Version="16.0.0" />
     <PackageReference Include="VkBotFramework" Version="1.0.0" />
   </ItemGroup>
