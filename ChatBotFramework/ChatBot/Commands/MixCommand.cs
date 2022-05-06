@@ -22,7 +22,7 @@ namespace ChatBot.Commands
             var phrase = inputString.Substring(firstIndex + 1, lastIndex - firstIndex - 1);
 
             var res = string.Empty;
-            for(int i = 0; i < repeatsCount; i++)
+            for (int i = 0; i < repeatsCount; i++)
             {
                 res += MixWords(phrase.Split(' ')) + " ";
             }
@@ -30,11 +30,17 @@ namespace ChatBot.Commands
             return res.TrimEnd();
         }
 
+        private Random _rnd = new Random(Environment.TickCount);
         private string MixWords(string[] words)
         {
-            var rnd = new Random(Environment.TickCount);
-            var res = words.OrderBy(x => rnd.Next());
-            return string.Join(" ", res);
+            for (int i = 0; i < words.Length; i++)
+            {
+                var word = words[i];
+                var r = _rnd.Next(words.Length);
+                words[i] = words[r];
+                words[r] = word;
+            }
+            return string.Join(" ", words);
         }
     }
 }
