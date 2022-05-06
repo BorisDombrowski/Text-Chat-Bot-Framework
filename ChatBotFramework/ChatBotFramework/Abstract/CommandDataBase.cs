@@ -33,5 +33,14 @@
         {
             _sendResponceMethod?.Invoke(SenderId, message);
         }
+
+        /// <summary>
+        /// Check is current command received from group chat.
+        /// </summary>
+        /// <returns>Always false in default implementation</returns>
+        public virtual bool IsCommandFromGroupChat()
+        {
+            return false;
+        }
     }
 }
