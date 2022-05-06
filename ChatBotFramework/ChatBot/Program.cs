@@ -8,7 +8,7 @@ class Program
 {
     private static void Main(string[] args)
     {
-        var cmdNotFoundMsg = "Команда не найдена или указаны неверные аргументы.\nОтправьте help, чтобы получить справку по командам.";
+        var cmdNotFoundMsg = "Команда не найдена или указаны неверные аргументы.\nОтправьте /help, чтобы получить справку по командам.";
         var executor = new CommandExecutor(cmdNotFoundMsg,
                 new StartCommand(),
                 new HelpCommand(),
